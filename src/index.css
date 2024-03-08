@@ -75,7 +75,12 @@ button:focus-visible {
 Button{
     cursor: pointer;
     position: relative;
-    /* overflow: hidden; */
+    border-radius: 2px;
+    overflow: hidden;
+    -webkit-border-radius: 2px;
+    -moz-border-radius: 2px;
+    -ms-border-radius: 2px;
+    -o-border-radius: 2px;
 }
 
 @keyframes hoverAnimation {

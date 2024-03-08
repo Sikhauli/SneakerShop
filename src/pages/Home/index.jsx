@@ -2,9 +2,12 @@ import React, { useState } from 'react';
 import { motion } from 'framer-motion';
 import Nav from '../../components/topNav/index';
 import Hero from "../../components/herospage/index"
-import { Card, CardBody, Image, Button, Link } from "@nextui-org/react";
+import { Card, CardBody, Image, Button, Link, CardHeader  } from "@nextui-org/react";
 import Slideshow from "../../components/slideShow"
 import sneakers from "../../assets/sneaker.json"
+import brands from "../../assets/brands.json"
+import deals from '../../assets/deals.json';
+// import Deals from "../../components/deals/index"
 import { GrFormPrevious, GrFormNext } from "react-icons/gr";
 
 function Home() {
@@ -102,38 +105,7 @@ function Home() {
               </div>
             </div>
           </CardBody>
-          {/*
-          <Card>
-            <div className='flex align-center justify-between p-6'>
-              <div>
-                  <text className='text-4xl'>Recent Launch</text>
-              </div> 
-              <div className='flex justify-between w-[8%] mt-12'>
-                <div className='bg-purple-600 cursor-pointer' onClick={handlePrevious}> 
-                  <GrFormPrevious />
-                </div>
-                <div className='bg-purple-600 cursor-pointer' onClick={handleNext}>
-                  <GrFormNext />
-                </div>
-              </div>
-            </div>
-            <CardBody className="flex flex-row p-12 justify-center">
-              {sneakers.map((sneaker, index) => (
-                <div key={index} className="relative w-[50%] mr-6 p-6 flex flex-col items-center justify-center  ${currentIndex === index ? '' : 'hidden'}">
-                  <p className='text-xs absolute top-1 left-1 p-2 bg-purple-600'>New Arrival</p>
-                  <img src={sneaker.image} alt={sneaker.name} className="w-[80%] h-32" />
-                  <p className='mt-2'>{sneaker.name}</p>
-                  <p className='mt-2'>{sneaker.price}</p>
-                  <Button className='w-full mt-2 rounded'>
-                    Add to cart
-                  </Button>
-                </div>
-              ))}
-            </CardBody>
-          </Card>
-              */}
-
-          <Card>
+          <div>
             <div className='flex align-center justify-between p-6'>
               <div>
                 <text className='text-4xl'>Recent Launch</text>
@@ -163,6 +135,65 @@ function Home() {
                 </div>
               ))}
             </CardBody>
+          </div>
+         
+          <motion.Card 
+            initial={{ y: 100, opacity: 0 }}
+            animate={{ y: 0, opacity: 1 }}
+            transition={{ delay: 2, duration: 2, type: "spring", stiffness: 100, ease: "linear" }}
+          >
+            <CardHeader>
+              <motion.h1 
+                className="text-7xl leading-tight font-bold text-start uppercase"
+                
+                >
+                <p>Discover limited sneakers </p> without limitation
+              </motion.h1>
+            </CardHeader>
+            <div className='w-screen h-auto flex align-center justify-content mt-6'>
+              <div className="grid grid-cols-2 md:grid-cols-3 lg:grid-cols-6">
+                {brands.map((brand, index) => (
+                  <div
+                    key={index}
+                    className={`relative w-full flex flex-col items-center justify-center border`}
+                  >
+                  <div>
+                      <p className="text-xs absolute inset-0 p-2 bg-transparent flex items-center justify-center uppercase text-2xl font-bold hover:bg-purple-600 transition-colors duration-3000">
+                        {brand.brand}
+                      </p> 
+                  </div>
+                    <img src={brand.image} alt={brand.brand} className="w-full h-32 object-contain" />
+                  </div>
+                ))}
+              </div>
+            </div>
+          </motion.Card>
+
+          <Card className='mt-8'>
+            <CardHeader className='flex align-center justify-between'>
+              <h1 className="text-7xl leading-tight font-bold text-start uppercase">Deal of the day</h1>
+              <Button className='p-6 w-[15%]'>View More</Button>
+            </CardHeader>
+            <div className='w-screen h-auto flex align-center justify-content mt-6'>
+              <CardBody className="flex flex-row align-center justify-center">
+                {deals.map((deal, index) => (
+                  <div
+                    key={index}
+                    className={`relative w-[50%] mr-6 flex flex-col items-center justify-center border ${index >= currentIndex && index < currentIndex + 4 ? 'slide-in' : 'hidden'}`}
+                  >
+                  <div className='w-full flex align-center justify-between mb-4 border-b p-3'>
+                    <p>{deal.name}</p>
+                    <p>{deal.price}</p>
+                  </div>
+                    <img src={deal.image} alt={deal.name} className="w-[80%] h-32 " />
+                    <div className='w-full flex flex-col align-center border-t p-3'>
+                      <p className='font-bold text-xl'>{deal.name}</p>
+                      <p className='text-xs'>{deal.manufacturer}</p>
+                    </div>
+                  </div>
+                ))}
+              </CardBody>
+            </div>
           </Card>
 
 

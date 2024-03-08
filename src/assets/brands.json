@@ -1,98 +1,74 @@
 [
     {
-        "name": "Black Sneakers",
-        "price": "$50",
+        "brand": "Nike",
         "image": "https://www.pngall.com/wp-content/uploads/2/Black-Sneakers-Transparent.png"
     },
     {
-        "name": "Blue Sneakers",
-        "price": "$60",
+        "brand": "Adidas",
         "image": "https://www.pngall.com/wp-content/uploads/2/Sneakers-PNG-Clipart.png"
     },
     {
-        "name": "White Sneakers",
-        "price": "$55",
+        "brand": "Puma",
         "image": "https://www.pngall.com/wp-content/uploads/2/Sneakers-PNG-Free-Download.png"
     },
     {
-        "name": "Red Sneakers",
-        "price": "$45",
+        "brand": "Reebok",
         "image": "https://www.pngall.com/wp-content/uploads/2/Sneakers-PNG-HD-Image.png"
     },
-
-
     {
-        "name": "Black Sneakers",
-        "price": "$50",
+        "brand": "Converse",
         "image": "https://www.pngall.com/wp-content/uploads/2/Black-Sneakers-Transparent.png"
     },
     {
-        "name": "Blue Sneakers",
-        "price": "$60",
+        "brand": "New Balance",
         "image": "https://www.pngall.com/wp-content/uploads/2/Sneakers-PNG-Clipart.png"
     },
     {
-        "name": "White Sneakers",
-        "price": "$55",
+        "brand": "Vans",
         "image": "https://www.pngall.com/wp-content/uploads/2/Sneakers-PNG-Free-Download.png"
     },
     {
-        "name": "Red Sneakers",
-        "price": "$45",
+        "brand": "Asics",
         "image": "https://www.pngall.com/wp-content/uploads/2/Sneakers-PNG-HD-Image.png"
     },
-
-
     {
-        "name": "Black Sneakers",
-        "price": "$50",
+        "brand": "Skechers",
         "image": "https://www.pngall.com/wp-content/uploads/2/Black-Sneakers-Transparent.png"
     },
     {
-        "name": "Blue Sneakers",
-        "price": "$60",
+        "brand": "Under Armour",
         "image": "https://www.pngall.com/wp-content/uploads/2/Sneakers-PNG-Clipart.png"
     },
     {
-        "name": "White Sneakers",
-        "price": "$55",
+        "brand": "Fila",
         "image": "https://www.pngall.com/wp-content/uploads/2/Sneakers-PNG-Free-Download.png"
     },
     {
-        "name": "Red Sneakers",
-        "price": "$45",
+        "brand": "Brooks",
         "image": "https://www.pngall.com/wp-content/uploads/2/Sneakers-PNG-HD-Image.png"
-    }, 
-
+    },
     {
-        "name": "Black Sneakers",
-        "price": "$50",
+        "brand": "Saucony",
         "image": "https://www.pngall.com/wp-content/uploads/2/Black-Sneakers-Transparent.png"
     },
     {
-        "name": "Blue Sneakers",
-        "price": "$60",
+        "brand": "Salomon",
         "image": "https://www.pngall.com/wp-content/uploads/2/Sneakers-PNG-Clipart.png"
     },
     {
-        "name": "White Sneakers",
-        "price": "$55",
+        "brand": "Merrell",
         "image": "https://www.pngall.com/wp-content/uploads/2/Sneakers-PNG-Free-Download.png"
     },
     {
-        "name": "Red Sneakers",
-        "price": "$45",
+        "brand": "Hoka One One",
         "image": "https://www.pngall.com/wp-content/uploads/2/Sneakers-PNG-HD-Image.png"
     },
     {
-        "name": "White Sneakers",
-        "price": "$55",
-        "image": "https://www.pngall.com/wp-content/uploads/2/Sneakers-PNG-Free-Download.png"
+        "brand": "On Running",
+        "image": "https://www.pngall.com/wp-content/uploads/2/Sneakers-PNG-HD-Image.png"
     },
     {
-        "name": "Red Sneakers",
-        "price": "$45",
+        "brand": "Diadora",
         "image": "https://www.pngall.com/wp-content/uploads/2/Sneakers-PNG-HD-Image.png"
     }
 ]
-

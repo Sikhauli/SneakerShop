@@ -3,7 +3,7 @@ import { Card, CardBody, Image, Button } from "@nextui-org/react";
 import { motion } from "framer-motion";
 
 
-export default function App() {
+export default function Hero() {
 
     return (
         <Card
