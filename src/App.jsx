@@ -9,6 +9,7 @@ import { useSelector } from "react-redux";
 import Login from "./pages/Login/index" 
 import Register from "./pages/register/index";
 import Home from "./pages/Home/index";
+import Cart from "./pages/Cart/index"
 
 function App() {
   const loading = useSelector((state) => state.loading.value);
@@ -30,6 +31,7 @@ function App() {
           <Route path='/login' element={<Login />} />
           <Route path='/register' element={<Register />} />
           <Route path='/' element={<Home />} />
+          <Route path='/cart' element={<Cart />} />
         </Routes>
         {loading && <LoadingScreen />}
       </div>

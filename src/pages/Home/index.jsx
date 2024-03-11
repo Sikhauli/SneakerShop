@@ -2,24 +2,24 @@ import React, { useState } from 'react';
 import { motion } from 'framer-motion';
 import Nav from '../../components/topNav/index';
 import Hero from "../../components/herospage/index"
-import { Card, CardBody, Image, Button, Link, CardHeader  } from "@nextui-org/react";
+import { Card, CardBody, Button, Link, CardHeader  } from "@nextui-org/react";
 import Slideshow from "../../components/slideShow"
 import sneakers from "../../assets/sneaker.json"
 import brands from "../../assets/brands.json"
 import deals from '../../assets/deals.json';
-// import Deals from "../../components/deals/index"
 import { GrFormPrevious, GrFormNext } from "react-icons/gr";
 
 function Home() {
 
   const [currentIndex, setCurrentIndex] = useState(0);
-
+ 
   const [navItems] = useState([
     { label: 'Home', path: '/' },
     { label: 'About', path: '/about' },
     { label: 'Product', path: '/product' },
     { label: 'Contact', path: '/contact' },
   ]);
+
 
   const handleNext = () => {
     setCurrentIndex(prevIndex => (prevIndex === sneakers.length - 1 ? 0 : prevIndex + 1));
@@ -58,7 +58,7 @@ function Home() {
     <>
       <main>
         <nav className='bg-transparent w-screen'>
-          <Nav />
+          <Nav/>
           <section className='flex align-center justify-center'>
             <motion.div
               variants={menuVariant}
@@ -158,9 +158,14 @@ function Home() {
                     className={`relative w-full flex flex-col items-center justify-center border`}
                   >
                   <div>
-                      <p className="text-xs absolute inset-0 p-2 bg-transparent flex items-center justify-center uppercase text-2xl font-bold hover:bg-purple-600 transition-colors duration-3000">
+                      <motion.p
+                        className="sneaker-brand text-2xl absolute inset-0 p-2 bg-transparent flex items-center justify-center uppercase text-2xl font-bold hover:bg-purple-600 transition-colors duration-3000"
+                        initial={{ opacity: 0 }}
+                        whileHover={{ opacity: 1 }}
+                        transition={{ duration: 0.3 }}
+                      >
                         {brand.brand}
-                      </p> 
+                      </motion.p>
                   </div>
                     <img src={brand.image} alt={brand.brand} className="w-full h-32 object-contain" />
                   </div>
@@ -195,10 +200,9 @@ function Home() {
               </CardBody>
             </div>
           </Card>
-
-
         </Card>
       </main>
+
     </>
   );
 }

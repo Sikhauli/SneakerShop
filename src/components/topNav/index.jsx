@@ -1,12 +1,14 @@
-import React from "react";
+import React, {useState, useEffect} from "react";
 import { motion } from "framer-motion";
-import { Navbar, NavbarBrand, NavbarContent, NavbarItem, Link, Input } from "@nextui-org/react";
+import { Navbar, NavbarBrand, NavbarContent, NavbarItem, Input, Badge } from "@nextui-org/react";
 import { IoIosSearch } from "react-icons/io";
 import { PiSneakerLight } from "react-icons/pi";
 import { FiUser } from "react-icons/fi";
 import { IoCartOutline } from "react-icons/io5";
+import { Link } from 'react-router-dom';
 
 export default function Nav() {
+
     return (
         <motion.div
             initial={{ opacity: 0, y: -50 }}
@@ -65,9 +67,9 @@ export default function Nav() {
                
                 <NavbarContent justify="end">
                     <NavbarItem className="hidden lg:flex">
-                        <Link to="/account" className="item">
-                            <div className="group">
-                                <i className="material-icons mx-2">
+                        <Link to="/login" className="item">
+                            <div className="group cursor-pointer" >
+                                <i className="material-icons mx-2 " >
                                     <FiUser />
                                 </i>
                                 <div className="detail">Account</div>
@@ -76,12 +78,15 @@ export default function Nav() {
                     </NavbarItem>
                     <NavbarItem>
                         <Link to="/cart" className="item">
-                            <div className="group">
+                            <div className="group cursor-pointer">
                                 <i className="material-icons mx-2">
+                                    <Badge content="4" shape="circle" color="danger" >
                                     <IoCartOutline />
+                                    </Badge>
                                 </i>
                                 <div className="detail">Cart</div>
                             </div>
+                        
                         </Link>
                     </NavbarItem>
                 </NavbarContent>

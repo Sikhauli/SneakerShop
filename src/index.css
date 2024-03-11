@@ -259,3 +259,7 @@ Button:hover{
 
 
 }
+
+.custom-transparent-input {
+  background-color: transparent !important;
+}
