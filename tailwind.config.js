@@ -13,6 +13,9 @@ export default {
       backgroundColor: (theme) => ({
         'dark': '#1a202c', 
       }),
+      fontFamily: {
+        sans: ['ui-sans-serif', 'system-ui', '-apple-system', 'BlinkMacSystemFont', 'Segoe UI', 'Roboto', 'Helvetica Neue', 'Arial', 'sans-serif'],
+      },
     },
   },
   darkMode: "class",

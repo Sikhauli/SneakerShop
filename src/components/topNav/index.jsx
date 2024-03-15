@@ -86,7 +86,6 @@ export default function Nav() {
                                 </i>
                                 <div className="detail">Cart</div>
                             </div>
-                        
                         </Link>
                     </NavbarItem>
                 </NavbarContent>

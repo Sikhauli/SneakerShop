@@ -97,15 +97,17 @@ Button{
   }
 }
 
-Button:hover{
+/* Button:hover{
   animation-name: hoverAnimation;
   animation-duration: 2s;
   animation-fill-mode: forwards;
   animation-timing-function: ease;
+} */
+
+
+.custom-checkbox:hover input[type="checkbox"] {
+  border: none;
 }
-
-
-
 
 
 /* Navbar style */

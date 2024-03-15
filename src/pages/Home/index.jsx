@@ -8,8 +8,11 @@ import sneakers from "../../assets/sneaker.json"
 import brands from "../../assets/brands.json"
 import deals from '../../assets/deals.json';
 import { GrFormPrevious, GrFormNext } from "react-icons/gr";
+import { useNavigate } from 'react-router-dom';
 
 function Home() {
+
+  const navigate = useNavigate();
 
   const [currentIndex, setCurrentIndex] = useState(0);
  
@@ -19,6 +22,10 @@ function Home() {
     { label: 'Product', path: '/product' },
     { label: 'Contact', path: '/contact' },
   ]);
+
+  const navigateToBrand = (brand) => {
+    navigate(`/brand/${brand.brand}`, { state: { brand } });
+  };
 
 
   const handleNext = () => {
@@ -45,14 +52,13 @@ function Home() {
   };
 
   const menuItemVariant = {
-    hidden: { opacity: 0, x: -250 }, 
+    hidden: { opacity: 0, x: -550 }, 
     visible: { opacity: 1, x: 0 }, 
   };
 
   const sectionStyle = {
     backgroundImage: `url('https://images.unsplash.com/photo-1552346154-21d32810aba3?q=80&w=1470&auto=format&fit=crop&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D')`,
   };
-
 
   return (
     <>
@@ -145,7 +151,6 @@ function Home() {
             <CardHeader>
               <motion.h1 
                 className="text-7xl leading-tight font-bold text-start uppercase"
-                
                 >
                 <p>Discover limited sneakers </p> without limitation
               </motion.h1>
@@ -155,7 +160,8 @@ function Home() {
                 {brands.map((brand, index) => (
                   <div
                     key={index}
-                    className={`relative w-full flex flex-col items-center justify-center border`}
+                    className={`relative w-full flex flex-col items-center justify-center border cursor-pointer`}
+                    onClick={() => navigateToBrand(brand)} 
                   >
                   <div>
                       <motion.p
