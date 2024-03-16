@@ -1,4 +1,4 @@
-import React, { useState } from 'react';
+import React, { useState, useEffect } from 'react';
 import { useLocation, useParams } from 'react-router-dom';
 import { Card } from "@nextui-org/react";
 import Sidebar from '../../components/sidebar/index';
@@ -6,13 +6,14 @@ import CardGrid from "../../components/cardGrid/index";
 import brands from '../../assets/brandsneaks.json';
 
 
-function BrandComponent({ filteredData, sizeData }) {
+function BrandComponent() {
 
     const location = useLocation();
     const { id } = useParams();
     const brand = location.state.brand;
 
     const [category, setCategory] = useState("All");
+    const [filteredData, setFilteredData] = useState(brands);
 
     // Function to filter the brands based on category
     const filterBrands = () => {
@@ -23,16 +24,14 @@ function BrandComponent({ filteredData, sizeData }) {
         }
     };
 
-    // const filterBrands = (brands, category) => {
-    //     // Filter brands based on category
-    //     const filteredByCategory = brands.filter(brand => brand.category === category);
+    useEffect(() => {
+        const filteredBrands = filterBrands();
+        setFilteredData(filteredBrands);
+    }, [category]);
 
-    //     // Filter brands based on sizeData
-    //     const filteredBySize = filteredData.filter(item => sizeData.includes(item.size));
-
-    //     // Return the intersection of brands filtered by category and size
-    //     return filteredByCategory.filter(brand => filteredBySize.some(item => item.brand === brand.brand));
-    // };
+    const receiveFilteredData = (data) => {
+        setFilteredData(data);
+    };
 
     return (
         <>
@@ -48,10 +47,10 @@ function BrandComponent({ filteredData, sizeData }) {
                 </div>
                 <div className='flex'>
                     <Card className='bg-transparent w-[30%] mt-12 mr-4 rounded p-1'>
-                        <Sidebar data={filterBrands()} />
+                        <Sidebar data={filterBrands()} sendFilteredData={receiveFilteredData} />
                     </Card>
                     <Card className='bg-transparent h-fit w-[100%] mt-12 rounded p-4'>
-                        <CardGrid data={filterBrands()} />
+                        <CardGrid data={filteredData} />
                     </Card>
                 </div>
             </Card>

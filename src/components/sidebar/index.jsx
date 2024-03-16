@@ -1,32 +1,45 @@
-import GridLayout from "../gridLayout/index"
 import React, { useState } from 'react';
 import { CardBody, CardHeader, Accordion, AccordionItem, Checkbox } from "@nextui-org/react";
-import Brand from "../../pages/Brand/index"
 
-function SideBar({ data, sizeData }) {
+function SideBar({ data, sendFilteredData }) {
 
-    const [filteredData, setFilteredData] = useState(data);
+    const [selectedSize, setSelectedSize] = useState(null);
+    const [selectedLabel, setSelectedLabel] = useState('');
 
-    const handleLabelChange = (label) => {
-        const filtered = data.filter(item => item.label === label);
-        setFilteredData(filtered);
+    const handleFiltersChange = (filterType, filterValue) => {
+        setSelectedLabel('');
+        let filtered;
+        switch (filterType) {
+            case 'label':
+                filtered = data.filter(item => item.label === filterValue);
+                break;
+            case 'price':
+                filtered = data.filter(item => {
+                    const price = parseInt(item.price.replace(/\D/g, ''));
+                    switch (filterValue) {
+                        case 'R500 - R1000':
+                            return price >= 500 && price <= 1000;
+                        case 'R1001 - R1500':
+                            return price >= 1001 && price <= 1500;
+                        case 'Over R1500':
+                            return price > 1500;
+                        default:
+                            return true;
+                    }
+                });
+                break;
+            case 'size':
+                filtered = data.filter(item => item.size === filterValue);
+                break;
+            default:
+                filtered = data;
+        }
+        sendFilteredData(filtered);
     };
 
-    const handlePriceChange = (priceRange) => {
-        const filtered = data.filter(item => {
-            const price = parseInt(item.price.replace(/\D/g, ''));
-            switch (priceRange) {
-                case 'R500 - R1000':
-                    return price >= 500 && price <= 1000;
-                case 'R1001 - R1500':
-                    return price >= 1001 && price <= 1500;
-                case 'Over R1500':
-                    return price > 1500;
-                default:
-                    return true;
-            }
-        });
-        setFilteredData(filtered);
+    const handleSizeSelect = (size) => {
+        setSelectedSize(size);
+        handleFiltersChange('size', size); 
     };
 
     return (
@@ -40,44 +53,50 @@ function SideBar({ data, sizeData }) {
                     <AccordionItem className='hover:border-none active:border-none' key="1" aria-label="Shop-by" title="Shop By">
                         <ul>
                             <li>
-                                <Checkbox onValueChange={() => handleLabelChange('Coming Soon')}>
+                                <Checkbox onValueChange={() => handleFiltersChange('label', 'Coming Soon')}>
                                     <text className='ml-2'>Coming Soon</text>
                                 </Checkbox>
                             </li>
                             <li>
-                                <Checkbox onValueChange={() => handleLabelChange('Exclusive')}>
+                                <Checkbox onValueChange={() => handleFiltersChange('label', 'Exclusive')}>
                                     <text className='ml-2'>Exclusive</text>
                                 </Checkbox>
                             </li>
                             <li>
-                                <Checkbox onValueChange={() => handleLabelChange('Last Pairs')}>
+                                <Checkbox onValueChange={() => handleFiltersChange('label', 'Last Pairs')}>
                                     <text className='ml-2'>Last Pairs</text>
                                 </Checkbox>
                             </li>
                             <li>
-                                <Checkbox onValueChange={() => handleLabelChange('New in')}>
+                                <Checkbox onValueChange={() => handleFiltersChange('label', 'New in')}>
                                     <text className='ml-2'>New in</text>
                                 </Checkbox>
                             </li>
                         </ul>
                     </AccordionItem>
                     <AccordionItem key="2" aria-label="size" title="Size">
-                        <GridLayout filteredData={filteredData}/>
+                        <div className="grid grid-cols-2 md:grid-cols-3 gap-1 justify-center">
+                            {["3", "4", "5", "6", "7", "8", "9", "10", "11"].map((item, index) => (
+                                <div key={index} className={`border hover:bg-purple-600 text-white p-2 flex items-center justify-center cursor-pointer ${selectedSize === item ? 'bg-purple-600' : ''}`} onClick={() => handleSizeSelect(item)}>
+                                    <p className="text-center">{item}</p>
+                                </div>
+                            ))}
+                        </div>
                     </AccordionItem>
                     <AccordionItem key="3" aria-label="price" title="Price">
                         <ul>
                             <li>
-                                <Checkbox onValueChange={() => handlePriceChange('R500 - R1000')}>
+                                <Checkbox onValueChange={() => handleFiltersChange('price', 'R500 - R1000')}>
                                     <text className='ml-2'>R500 - R1000</text>
                                 </Checkbox>
                             </li>
                             <li>
-                                <Checkbox onValueChange={() => handlePriceChange('R1001 - R1500')}>
+                                <Checkbox onValueChange={() => handleFiltersChange('price', 'R1001 - R1500')}>
                                     <text className='ml-2'>R1001 - R1500</text>
                                 </Checkbox>
                             </li>
                             <li>
-                                <Checkbox onValueChange={() => handlePriceChange('Over R1500')}>
+                                <Checkbox onValueChange={() => handleFiltersChange('price', 'Over R1500')}>
                                     <text className='ml-2'> Over R1500</text>
                                 </Checkbox>
                             </li>
@@ -85,7 +104,6 @@ function SideBar({ data, sizeData }) {
                     </AccordionItem>
                 </Accordion>
             </CardBody>
-        {/*  <Brand sidebarData={{ filteredData, sizeData }} /> */}
         </div>
     );
 }
