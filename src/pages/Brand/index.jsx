@@ -35,14 +35,14 @@ function BrandComponent() {
 
     return (
         <>
-            <Card className='w-screen h-full flex flex-col justify-center align-center p-4'>
+            <Card className='w-screen h-full flex flex-col justify-center align-center p-4 rounded'>
                 <h1 className="font-Roboto text-6xl font-bold leading-tight line-clamp-0 text-center my-5 mb-8">{brand.brand} Sneakers</h1>
                 <div className='flex justify-center align-center'>
                     <ul className='w-[40%] flex justify-between uppercase font-ui-sans-serif text-gray-500'>
-                        <li className={`cursor-pointer ${category === "All" ? "text-white" : "hover:text-purple-600"}`} onClick={() => setCategory("All")}>All</li>
-                        <li className={`cursor-pointer ${category === "Men" ? "text-white" : "hover:text-purple-600"}`} onClick={() => setCategory("Men")}>Men</li>
-                        <li className={`cursor-pointer ${category === "Women" ? "text-white" : "hover:text-purple-600"}`} onClick={() => setCategory("Women")}>Women</li>
-                        <li className={`cursor-pointer ${category === "Kids" ? "text-white" : "hover:text-purple-600"}`} onClick={() => setCategory("Kids")}>Kids</li>
+                        <li className={`font-serif cursor-pointer ${category === "All" ? "text-white" : "hover:text-purple-600"}`} onClick={() => setCategory("All")}>All</li>
+                        <li className={`font-serif cursor-pointer ${category === "Men" ? "text-white" : "hover:text-purple-600"}`} onClick={() => setCategory("Men")}>Men</li>
+                        <li className={`font-serif cursor-pointer ${category === "Women" ? "text-white" : "hover:text-purple-600"}`} onClick={() => setCategory("Women")}>Women</li>
+                        <li className={`font-serif cursor-pointer ${category === "Kids" ? "text-white" : "hover:text-purple-600"}`} onClick={() => setCategory("Kids")}>Kids</li>
                     </ul>
                 </div>
                 <div className='flex'>

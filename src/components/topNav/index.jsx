@@ -7,7 +7,11 @@ import { FiUser } from "react-icons/fi";
 import { IoCartOutline } from "react-icons/io5";
 import { Link } from 'react-router-dom';
 
-export default function Nav() {
+export default function Nav({ currentUser }) {
+
+    const linkDestination = currentUser ? '/account' : '/login';
+    const linkText = currentUser ? currentUser?.username : 'Account';
+
 
     return (
         <motion.div
@@ -36,7 +40,7 @@ export default function Nav() {
             >
                 <NavbarBrand>
                     <PiSneakerLight />
-                    <p className="font-bold text-inherit text-blue-700 mx-2">
+                    <p className="font-bold font-serif text-inherit text-blue-700 mx-2">
                         Sneaker<span className="text-purple-500">Freak</span>
                     </p>
                 </NavbarBrand>
@@ -47,6 +51,7 @@ export default function Nav() {
                             mainWrapper: "h-full",
                             input: "text-small",
                             inputWrapper: "h-full font-normal text-default-500 ",
+                            font: "serif",
                         }}
                         placeholder="Type to search..."
                         size="sm"
@@ -55,24 +60,24 @@ export default function Nav() {
                         className=" rounded"
                     />
                     <select className="h-9 w-30 px-2 rounded">
-                        <option value="all" className="text-white">
+                        <option value="all" className="text-white font-serif">
                             All
                         </option>
-                        <option value="all">Mens</option>
-                        <option value="all">Womens</option>
-                        <option value="all">Winter</option>
-                        <option value="all">Summer</option>
+                        <option value="all" className="font-serif">Mens</option>
+                        <option value="all" className="font-serif">Womens</option>
+                        <option value="all" className="font-serif">Winter</option>
+                        <option value="all" className="font-serif">Summer</option>
                     </select> 
                 </NavbarContent>
                
                 <NavbarContent justify="end">
                     <NavbarItem className="hidden lg:flex">
-                        <Link to="/login" className="item">
-                            <div className="group cursor-pointer" >
-                                <i className="material-icons mx-2 " >
+                        <Link to={linkDestination} className="item">
+                            <div className="group cursor-pointer">
+                                <i className="material-icons mx-2">
                                     <FiUser />
                                 </i>
-                                <div className="detail">Account</div>
+                                <div className="detail font-serif">{linkText}</div>
                             </div>
                         </Link>
                     </NavbarItem>
@@ -84,7 +89,7 @@ export default function Nav() {
                                     <IoCartOutline />
                                     </Badge>
                                 </i>
-                                <div className="detail">Cart</div>
+                                <div className="detail font-serif">Cart</div>
                             </div>
                         </Link>
                     </NavbarItem>

@@ -1,6 +1,7 @@
 import React, { useEffect, useState } from "react";
 import gifAnimation from "../../assets/output.gif"
 import { motion, AnimatePresence } from 'framer-motion';
+import { Card, Button } from "@nextui-org/react";
 
 function TypingText({ text }) {
     const [visibleText, setVisibleText] = useState('');
@@ -18,7 +19,7 @@ function TypingText({ text }) {
     return (
         <AnimatePresence>
             <motion.p
-                className="bold font-sans-serif text-4xl"
+                className="animatedText text-4xl leading-tight"
                 initial={{ opacity: 0, y: -20 }}
                 animate={{ opacity: 1, y: 0 }}
                 exit={{ opacity: 0, y: -20 }}
@@ -58,14 +59,15 @@ function CardGrid({ data }) {
 
     return (
 
-        <div className={`grid gap-4 ${numColumns} justify-center`}>
+        <div className={`grid gap-4 ${numColumns} justify-center `}>
             {data.map((brand, index) => (
-                <div key={index} className="h-50 rounded overflow-hidden">
+                <div key={index} className="rounded overflow-hidden border p-2">
                     <img src={brand.image} alt={brand.brand} className="w-full h-[60%] border p-6" />
                     <div className="">
-                        <p className="font-bold text-xl text-gray-300">{brand.brand}</p>
-                        <p className="text-sm text-gray-100">{brand.name}</p>
-                        <p className="font-bold ">{brand.price}</p>
+                        <p className="font-bold font-serif text-xl">{brand.brand}</p>
+                        <p className="text-sm font-serif">{brand.name}</p>
+                        <p className="font-bold font-serif">{brand.price}</p>
+                        <Button className="w-full font-serif rounded">Add To Cart</Button>
                     </div>
                 </div>
             ))}

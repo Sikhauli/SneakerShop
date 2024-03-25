@@ -97,18 +97,20 @@ Button{
   }
 }
 
-/* Button:hover{
-  animation-name: hoverAnimation;
-  animation-duration: 2s;
-  animation-fill-mode: forwards;
-  animation-timing-function: ease;
-} */
-
 
 .custom-checkbox:hover input[type="checkbox"] {
   border: none;
 }
 
+
+.animatedText{
+
+font-family: 'Gill Sans', 'Gill Sans MT', Calibri, 'Trebuchet MS', sans-serif;
+font: bolder;
+font-stretch: condensed;
+font-synthesis: weight;
+
+}
 
 /* Navbar style */
 

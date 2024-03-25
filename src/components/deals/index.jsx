@@ -17,11 +17,11 @@ export default function Deals() {
                                 <div className={`relative `}>
                                     <Card css={{ w: "100%", p: "6", mt: "6" }}>
                                         <Card.Body>
-                                            <Text className='text-xs absolute top-1 left-1 p-2 bg-purple-600'>New Arrival</Text>
+                                            <Text className='text-xs font-serif absolute top-1 left-1 p-2 bg-purple-600'>New Arrival</Text>
                                             <img src={sneaker.image} alt={sneaker.name} className="w-[80%] h-32" />
-                                            <p className='mt-2'>{sneaker.name}</p>
-                                            <p className='mt-2'>{sneaker.price}</p>
-                                            <Button className='w-full mt-2 rounded'>Add to cart</Button>
+                                            <p className='mt-2 font-serif'>{sneaker.name}</p>
+                                            <p className='mt-2 font-serif'>{sneaker.price}</p>
+                                            <Button className='w-full font-serif mt-2 rounded'>Add to cart</Button>
                                         </Card.Body>
                                     </Card>
                                 </div>

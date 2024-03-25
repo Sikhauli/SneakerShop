@@ -30,7 +30,7 @@ export default function Hero() {
                                                 animate={{ opacity: 1, y: 0 }}
                                                 transition={{ duration: 0.8 }}
                                             >
-                                                <h1>
+                                                <h1 className="font-serif">
                                                     <motion.span
                                                         initial={{ scale: 0 }}
                                                         animate={{ scale: 1 }}
@@ -50,7 +50,7 @@ export default function Hero() {
                                                     initial={{ opacity: 0 }}
                                                     animate={{ opacity: 1 }}
                                                     transition={{ delay: 0.6, duration: 0.5 }}
-                                                    className="mt-6"
+                                                    className="mt-6 font-serif"
                                                 >
                                                     Step into Sneaker Supreme: Elevate Your Footwear Game with Our Unmatched Style
                                                 </motion.p>
@@ -62,14 +62,14 @@ export default function Hero() {
                                                 className="btn-box mt-8"
                                             >
                                                 <motion.Button 
-                                                    color="primary" variant="bordered" className="mr-4"
+                                                    color="primary" variant="bordered" className="mr-4 font-serif"
                                                     initial={{ scale: 0 }}
                                                     animate={{ scale: 1 }}
                                                     transition={{ delay: 0.5, duration: 0.5 }}
                                                 >
                                                         Bordered
                                                 </motion.Button>
-                                                <motion.Button color="primary" variant="flat" className=""
+                                                <motion.Button color="primary" variant="flat" className="font-serif"
                                                     initial={{ scale: 0 }}
                                                     animate={{ scale: 1 }}
                                                     transition={{ delay: 1, duration: 0.5 }}

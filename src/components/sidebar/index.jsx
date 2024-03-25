@@ -45,8 +45,8 @@ function SideBar({ data, sendFilteredData }) {
     return (
         <div>
             <CardHeader className='justify-between px-4 '>
-                <p className='cursor-pointer hover:underline hover:text-red-500'>Reset Filters</p>
-                <p className='cursor-pointer hover:underline hover:text-purple-500'>Hide Filter</p>
+                <p className='cursor-pointer font-serif hover:underline hover:text-red-500'>Reset Filters</p>
+                <p className='cursor-pointer font-serif hover:underline hover:text-purple-500'>Hide Filter</p>
             </CardHeader>
             <CardBody>
                 <Accordion variant="splitted">
@@ -54,22 +54,22 @@ function SideBar({ data, sendFilteredData }) {
                         <ul>
                             <li>
                                 <Checkbox onValueChange={() => handleFiltersChange('label', 'Coming Soon')}>
-                                    <text className='ml-2'>Coming Soon</text>
+                                    <text className='ml-2 font-serif'>Coming Soon</text>
                                 </Checkbox>
                             </li>
                             <li>
                                 <Checkbox onValueChange={() => handleFiltersChange('label', 'Exclusive')}>
-                                    <text className='ml-2'>Exclusive</text>
+                                    <text className='ml-2 font-serif'>Exclusive</text>
                                 </Checkbox>
                             </li>
                             <li>
                                 <Checkbox onValueChange={() => handleFiltersChange('label', 'Last Pairs')}>
-                                    <text className='ml-2'>Last Pairs</text>
+                                    <text className='ml-2 font-serif'>Last Pairs</text>
                                 </Checkbox>
                             </li>
                             <li>
                                 <Checkbox onValueChange={() => handleFiltersChange('label', 'New in')}>
-                                    <text className='ml-2'>New in</text>
+                                    <text className='ml-2 font-serif'>New in</text>
                                 </Checkbox>
                             </li>
                         </ul>
@@ -78,7 +78,7 @@ function SideBar({ data, sendFilteredData }) {
                         <div className="grid grid-cols-2 md:grid-cols-3 gap-1 justify-center">
                             {["3", "4", "5", "6", "7", "8", "9", "10", "11"].map((item, index) => (
                                 <div key={index} className={`border hover:bg-purple-600 text-white p-2 flex items-center justify-center cursor-pointer ${selectedSize === item ? 'bg-purple-600' : ''}`} onClick={() => handleSizeSelect(item)}>
-                                    <p className="text-center">{item}</p>
+                                    <p className="text-center font-serif">{item}</p>
                                 </div>
                             ))}
                         </div>
@@ -87,17 +87,17 @@ function SideBar({ data, sendFilteredData }) {
                         <ul>
                             <li>
                                 <Checkbox onValueChange={() => handleFiltersChange('price', 'R500 - R1000')}>
-                                    <text className='ml-2'>R500 - R1000</text>
+                                    <text className='ml-2 font-serif'>R500 - R1000</text>
                                 </Checkbox>
                             </li>
                             <li>
                                 <Checkbox onValueChange={() => handleFiltersChange('price', 'R1001 - R1500')}>
-                                    <text className='ml-2'>R1001 - R1500</text>
+                                    <text className='ml-2 font-serif'>R1001 - R1500</text>
                                 </Checkbox>
                             </li>
                             <li>
                                 <Checkbox onValueChange={() => handleFiltersChange('price', 'Over R1500')}>
-                                    <text className='ml-2'> Over R1500</text>
+                                    <text className='ml-2 font-serif'> Over R1500</text>
                                 </Checkbox>
                             </li>
                         </ul>

@@ -13,6 +13,11 @@ import {
   Button,
   Input,
 } from "@nextui-org/react";
+import {
+  API,
+  AUTH_ENDPOINTS,
+  getAxiosError,
+} from "../../helpers/constant";
 
 //icons
 import { RiDoubleQuotesL } from "react-icons/ri";
@@ -30,7 +35,11 @@ export default function Register() {
   const currentUser = useSelector((state) => state.user.value);
   const { enqueueSnackbar } = useSnackbar();
   const dispatch = useDispatch();
-  const [userData, setUserData] = useState();
+  const [userData, setUserData] = useState({ email: "", password: "", username: "" });
+
+  const navigate = useNavigate();
+  const navToHome = () => navigate("/");
+
 
   const onChange = (e) => {
     e?.preventDefault();
@@ -40,6 +49,30 @@ export default function Register() {
       [e.target.name]: e.target.value,
     }));
   };
+
+
+  const submit = (e) => {
+    e.preventDefault();
+    dispatch(showLoading());
+
+    API.post(AUTH_ENDPOINTS.register, userData)
+      .then((response) => {
+        dispatch(setUser(response.data));
+        enqueueSnackbar("Successfully User Created!", {
+          variant: "success",
+        });
+        navToHome();
+      })
+      .catch((error) =>
+        enqueueSnackbar(getAxiosError(error), {
+          variant: "error",
+        })
+      )
+      .finally(() => dispatch(hideLoading()));
+  };
+
+
+
 
   return (
     <div className="grid grid-cols-[44rem_1fr]">
@@ -56,12 +89,12 @@ export default function Register() {
         >
           <div className="">
             <RiDoubleQuotesL className="mb-3 text-4xl" />
-            <p className="leading-7">
+            <p className="leading-7 font-serif">
               We believe in prioritising the needs of our members and their
               families during a difficult time of bereavement. We take pride in
               providing the best funeral products and services.
             </p>
-            <p className="mt-4">&#45;Royal Funerals Team</p>
+            <p className="mt-4 font-serif">&#45;Sneaker<span className="text-purple-500">Freak</span></p>
           </div>
         </CardFooter>
       </Card>
@@ -70,24 +103,25 @@ export default function Register() {
       {/* right */}
       <div className="p-2 flex flex-col justify-center ">
         <div className="mb-6">
-          <h1 className="text-4xl font-semibold text-center mb-2">
+          <h1 className="text-4xl font-semibold text-center mb-2 font-serif">
             Create an Account 🚀
           </h1>
-          <p className="text-sm text-center text-default-500">
+          <p className="text-sm text-center text-default-500 font-serif font-serif">
             Welcome! Let&apos;s get started on your registration.
             Join us to explore a world of opportunities and services. Let&apos;s
             make this journey together!
           </p>
         </div>
 
-        <form className=" flex flex-col justify-center item-center">
+        <form onSubmit={submit} className=" flex flex-col justify-center item-center">
           <Input
             type="username"
             labelPlacement="outside"
             label="Username"
             name="username"
+            value={userData.username}
             placeholder="Enter Username"
-            className=" w-[98%] p-3 rounded text-black font-arias"
+            className=" w-[98%] p-3 rounded font-arias"
             size="lg"
             radius="sm"
             variant="bordered"
@@ -99,8 +133,9 @@ export default function Register() {
             labelPlacement="outside"
             label="Email"
             name="email"
+            value={userData.email}
             placeholder="Enter Email"
-            className="w-[98%] p-3 rounded text-black font-arias"
+            className="w-[98%] p-3 rounded font-arias"
             size="lg"
             radius="sm"
             variant="bordered"
@@ -112,8 +147,9 @@ export default function Register() {
             labelPlacement="outside"
             label="Password"
             name="password"
+            value={userData.password}
             placeholder="Enter Password"
-            className="w-[98%] p-3 rounded text-black"
+            className="w-[98%] p-3 rounded "
             size="lg"
             radius="sm"
             variant="bordered"
@@ -125,7 +161,7 @@ export default function Register() {
             color="primary"
             size="lg"
             radius="sm"
-            className="mt-4 w-[99%]"
+            className="mt-4 w-[99%] font-serif"
           >
             Sign in
           </Button>
@@ -133,7 +169,7 @@ export default function Register() {
 
         <div className="flex items-center my-4">
           <hr className="flex-grow border-t border-default-100" />
-          <span className="mx-2 text-default-500 text-sm">OR</span>
+          <span className="mx-2 text-default-500 text-sm font-serif">OR</span>
           <hr className="flex-grow border-t border-default-100" />
         </div>
         <div className="flex items-center justify-center">
@@ -142,9 +178,9 @@ export default function Register() {
         </div>
 
         <div className="flex items-center justify-center mt-6">
-          <p className="text-sm cursor-pointer text-default-500">
+          <p className="text-sm cursor-pointer text-default-500 font-serif">
             Already have an account?
-            <Link to="/login" className="ml-1 text-primary underline">Sign up</Link>
+            <Link to="/login" className="ml-1 text-primary underline font-serif">Sign up</Link>
           </p>
         </div>
 
