@@ -20,10 +20,10 @@ function Credit() {
       <Card className='flex flex-row justify-between w-[120%] mb-4 '>
         <div className="p-6">
           <p className='font-serif text-xl mb-2'>Available Credit</p>
-          <p className='font-serif font-extrabold text-2xl mb-3'>R 0</p>
+          <p className='font-extrabold text-2xl mb-3'>R 0</p>
           <p className='font-serif text-sm'>Credit will be automatically applied to your next purchase.</p>        
         </div>
-        <Button className='mt-12 mr-4 px-4 font-serif text-sm rounded bg-transparent border-purple-500'>Redeem Gift Voucher</Button>
+        <Button variant="bordered" className='mt-12 mr-4 px-4 font-serif text-sm rounded bg-transparent'>Redeem Gift Voucher</Button>
       </Card>
       <div className='flex flex-row justify-between w-[120%] mb-4 p-6'>
         <div>

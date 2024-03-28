@@ -12,6 +12,7 @@ import Home from "./pages/Home/index";
 import Cart from "./pages/Cart/index"
 import Brand from "./pages/Brand/index.jsx"
 import Account from "./pages/Account/index.jsx"
+import Payment from "./pages/Payment/index.jsx"
 
 function App() {
   const loading = useSelector((state) => state.loading.value);
@@ -35,6 +36,7 @@ function App() {
           <Route path='/' element={<Home />} />
           <Route path='/cart' element={<Cart />} />
           <Route path='/account' element={<Account />} />
+          <Route path='/payment-method' element={<Payment />} />
           <Route path="/brand/:id" element={<Brand />} />
         </Routes>
         {loading && <LoadingScreen />}

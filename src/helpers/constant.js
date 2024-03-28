@@ -1,8 +1,7 @@
 // icons imports
 import axios from "axios";
 
-export const API_URL =
-    import.meta.env.VITE_API_URL || "http://localhost:5000/api/";
+export const API_URL = import.meta.env.VITE_API_URL || "http://localhost:5000/api/";
 
 export const COMPANY_NAME = "Sneaker Freaks";
 
@@ -17,11 +16,11 @@ export const AUTH_ENDPOINTS = {
     logout: "auth/logout",
 };
 
-export const NEXT_OF_KIN_ENDPOINTS = {
-    get: "next-of-kins/",
-    update: "/next-of-kins/",
-    delete: "/next-of-kins/",
-    add: "/next-of-kins/add",
+export const SNEAKER_ENDPOINTS = {
+    get: "sneaker/",
+    update: "sneaker/",
+    delete: "sneaker/",
+    add: "/sneaker/add",
 };
 
 export const USER_PERMISSIONS = [

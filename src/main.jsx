@@ -6,7 +6,6 @@ import App from './App.jsx';
 import './index.css';
 import { SnackbarProvider } from 'notistack';
 import { NextUIProvider } from "@nextui-org/react";
-import MotionWrapper from "./motion.jsx"
 
 
 ReactDOM.createRoot(document.getElementById('root')).render(
@@ -15,9 +14,7 @@ ReactDOM.createRoot(document.getElementById('root')).render(
       <NextUIProvider>
         <React.StrictMode>
           <main className="dark text-foreground bg-background">
-            <MotionWrapper>
-              <App />
-            </MotionWrapper>
+            <App />
           </main>
         </React.StrictMode>
       </NextUIProvider>

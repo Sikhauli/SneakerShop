@@ -1,15 +1,15 @@
 import React, {useState, useEffect} from "react";
 import { motion } from "framer-motion";
-import { Navbar, NavbarBrand, NavbarContent, NavbarItem, Input, Badge } from "@nextui-org/react";
+import { Navbar, NavbarBrand, NavbarContent, NavbarItem, Input, Badge, Button } from "@nextui-org/react";
 import { IoIosSearch } from "react-icons/io";
 import { PiSneakerLight } from "react-icons/pi";
 import { FiUser } from "react-icons/fi";
 import { IoCartOutline } from "react-icons/io5";
 import { Link } from 'react-router-dom';
 
-export default function Nav({ currentUser }) {
+export default function Nav({ currentUser, onAddSneaker }) {
 
-    const linkDestination = currentUser ? '/account' : '/login';
+    const linkDestination = currentUser ? (currentUser.user === 'ADMIN' ? '/admin' : '/account') : '/login';
     const linkText = currentUser ? currentUser?.username : 'Account';
 
 
@@ -81,18 +81,26 @@ export default function Nav({ currentUser }) {
                             </div>
                         </Link>
                     </NavbarItem>
-                    <NavbarItem>
-                        <Link to="/cart" className="item">
-                            <div className="group cursor-pointer">
-                                <i className="material-icons mx-2">
-                                    <Badge content="4" shape="circle" color="danger" >
-                                    <IoCartOutline />
-                                    </Badge>
-                                </i>
-                                <div className="detail font-serif">Cart</div>
-                            </div>
-                        </Link>
-                    </NavbarItem>
+                    {currentUser?.user === 'ADMIN' ? (
+                        <NavbarItem>
+                                <div className="cursor-pointer">
+                                    <Button variant="bordered" className="font-serif bg-transparent rounded" onClick={onAddSneaker}>Add Sneaker</Button> 
+                                </div>
+                        </NavbarItem>
+                    ) : (
+                        <NavbarItem>
+                            <Link to="/cart" className="item">
+                                <div className="group cursor-pointer">
+                                    <i className="material-icons mx-2">
+                                        <Badge content="4" shape="circle" color="danger">
+                                            <IoCartOutline />
+                                        </Badge>
+                                    </i>
+                                    <div className="detail font-serif">Cart</div>
+                                </div>
+                            </Link>
+                        </NavbarItem>
+                    )}
                 </NavbarContent>
             </Navbar>
         </motion.div>

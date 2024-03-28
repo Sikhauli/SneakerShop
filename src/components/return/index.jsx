@@ -32,7 +32,7 @@ function Returns() {
         <div className="p-6">
           <p className='font-serif text-3xl'>Returns</p>
         </div>
-        <Button className='mt-4 mr-4 px-8 font-serif text-sm rounded bg-transparent border-purple-500'>Log Return</Button>
+        <Button variant="bordered" className='mt-4 mr-4 px-8 font-serif text-sm rounded bg-transparent '>Log Return</Button>
       </div>
       <div className=' w-[120%]'>
         <CardBody className='flex flex-row flex-wrap gap-4 p-8'>

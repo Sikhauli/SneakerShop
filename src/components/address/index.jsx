@@ -39,7 +39,7 @@ function Address() {
     <>
       <div className='flex flex-row justify-between w-[120%]'>
         <p className='py-8 font-serif bold text-xl'>Address Details</p>
-        <Button className='p-4 font-serif text-sm my-4 rounded bg-transparent border-purple-500'>Add Address</Button>
+        <Button variant="bordered" className='p-4 font-serif text-sm my-4 rounded bg-transparent'>Add Address</Button>
       </div>
       {combinedAddresses.map((address, index) => (
         <Card key={index} className='flex p-6 rounded w-[120%] mb-4'>

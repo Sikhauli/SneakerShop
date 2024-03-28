@@ -2,6 +2,7 @@ import React, { useState } from 'react';
 import { motion } from 'framer-motion';
 import Nav from '../../components/topNav/index';
 import Hero from "../../components/herospage/index"
+import AddSneaker from '../../modals/addSneakers';
 import { Card, CardBody, Button, Link, CardHeader  } from "@nextui-org/react";
 import Slideshow from "../../components/slideShow"
 import sneakers from "../../assets/sneaker.json"
@@ -14,7 +15,7 @@ import { useDispatch, useSelector } from "react-redux";
 function Home() {
 
   const navigate = useNavigate();
-
+  const [isOpen, setIsOpen] = useState(false);
   const [currentIndex, setCurrentIndex] = useState(0);
   const currentUser = useSelector((state) => state.user.value);
 
@@ -24,6 +25,14 @@ function Home() {
     { label: 'Product', path: '/product' },
     { label: 'Contact', path: '/contact' },
   ]);
+  
+  const handleAddSneaker = () => {
+    setIsOpen(true);
+  };
+
+  const toggleModal = () => {
+    setIsOpen(!isOpen);
+  };
 
   const navigateToBrand = (brand) => {
     navigate(`/brand/${brand.brand}`, { state: { brand } });
@@ -67,7 +76,7 @@ function Home() {
     <>
       <main>
         <nav className='bg-transparent w-screen'>
-          <Nav currentUser={currentUser}/>
+          <Nav currentUser={currentUser} onAddSneaker={handleAddSneaker} />
           <section className='flex align-center justify-center'>
             <motion.div
               variants={menuVariant}
@@ -87,7 +96,7 @@ function Home() {
             </motion.div>
           </section>
           <section className='bg-cover bg-center h-full' style={sectionStyle}>
-                <Hero/>
+            <Hero/>
           </section>
         </nav>
         <Card
@@ -211,7 +220,7 @@ function Home() {
           </Card>
         </Card>
       </main>
-
+      <AddSneaker isOpen={isOpen} onClose={toggleModal} /> 
     </>
   );
 }
