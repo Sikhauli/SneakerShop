@@ -1,0 +1,182 @@
+[
+    {
+        "id": 1,
+        "brand": "Nike",
+        "name": "Air Max 97",
+        "image": "https://www.pngall.com/wp-content/uploads/2/Black-Sneakers-Transparent.png",
+        "category": "Men",
+        "size": "10",
+        "label": "Coming Soon",
+        "price": "R2000"
+    },
+    {
+        "id": 2,
+        "brand": "Adidas",
+        "name": "UltraBoost",
+        "image": "https://www.pngall.com/wp-content/uploads/2/Sneakers-PNG-Clipart.png",
+        "category": "Women",
+        "size": "8",
+        "label": "Exclusive",
+        "price": "R1800"
+    },
+    {
+        "id": 3,
+        "brand": "Puma",
+        "name": "RS-X",
+        "image": "https://www.pngall.com/wp-content/uploads/2/Sneakers-PNG-Free-Download.png",
+        "category": "Kids",
+        "size": "5",
+        "label": "Last Pairs",
+        "price": "R1200"
+    },
+    {
+        "id": 4,
+        "brand": "Reebok",
+        "name": "Classic Leather",
+        "image": "https://www.pngall.com/wp-content/uploads/2/Sneakers-PNG-HD-Image.png",
+        "category": "Men",
+        "size": "9",
+        "label": "New in",
+        "price": "R2500"
+    },
+    {
+        "id": 5,
+        "brand": "Converse",
+        "name": "Chuck Taylor",
+        "image": "https://www.pngall.com/wp-content/uploads/2/Black-Sneakers-Transparent.png",
+        "category": "Women",
+        "size": "7",
+        "label": "Coming Soon",
+        "price": "R1500"
+    },
+    {
+        "id": 6,
+        "brand": "New Balance",
+        "name": "574",
+        "image": "https://www.pngall.com/wp-content/uploads/2/Sneakers-PNG-Clipart.png",
+        "category": "Kids",
+        "size": "6",
+        "label": "Exclusive",
+        "price": "R1700"
+    },
+    {
+        "id": 7,
+        "brand": "Vans",
+        "name": "Old Skool",
+        "image": "https://www.pngall.com/wp-content/uploads/2/Sneakers-PNG-Free-Download.png",
+        "category": "Men",
+        "size": "11",
+        "label": "Last Pairs",
+        "price": "R1900"
+    },
+    {
+        "id": 8,
+        "brand": "Asics",
+        "name": "Gel-Kayano",
+        "image": "https://www.pngall.com/wp-content/uploads/2/Sneakers-PNG-HD-Image.png",
+        "category": "Women",
+        "size": "9",
+        "label": "New in",
+        "price": "R2200"
+    },
+    {
+        "id": 9,
+        "brand": "Skechers",
+        "name": "D'Lites",
+        "image": "https://www.pngall.com/wp-content/uploads/2/Black-Sneakers-Transparent.png",
+        "category": "Kids",
+        "size": "5",
+        "label": "Coming Soon",
+        "price": "R1300"
+    },
+    {
+        "id": 10,
+        "brand": "Under Armour",
+        "name": "Charged Bandit",
+        "image": "https://www.pngall.com/wp-content/uploads/2/Sneakers-PNG-Clipart.png",
+        "category": "Men",
+        "size": "10",
+        "label": "Exclusive",
+        "price": "R2100"
+    },
+    {
+        "id": 11,
+        "brand": "Fila",
+        "name": "Disruptor",
+        "image": "https://www.pngall.com/wp-content/uploads/2/Sneakers-PNG-Free-Download.png",
+        "category": "Women",
+        "size": "8",
+        "label": "Last Pairs",
+        "price": "R1600"
+    },
+    {
+        "id": 12,
+        "brand": "Brooks",
+        "name": "Ghost",
+        "image": "https://www.pngall.com/wp-content/uploads/2/Sneakers-PNG-HD-Image.png",
+        "category": "Kids",
+        "size": "6",
+        "label": "New in",
+        "price": "R1800"
+    },
+    {
+        "id": 13,
+        "brand": "Saucony",
+        "name": "Jazz",
+        "image": "https://www.pngall.com/wp-content/uploads/2/Black-Sneakers-Transparent.png",
+        "category": "Men",
+        "size": "9",
+        "label": "Coming Soon",
+        "price": "R1400"
+    },
+    {
+        "id": 14,
+        "brand": "Salomon",
+        "name": "Speedcross",
+        "image": "https://www.pngall.com/wp-content/uploads/2/Sneakers-PNG-Clipart.png",
+        "category": "Women",
+        "size": "7",
+        "label": "Exclusive",
+        "price": "R1700"
+    },
+    {
+        "id": 15,
+        "brand": "Merrell",
+        "name": "Moab",
+        "image": "https://www.pngall.com/wp-content/uploads/2/Sneakers-PNG-Free-Download.png",
+        "category": "Kids",
+        "size": "5",
+        "label": "Last Pairs",
+        "price": "R1200"
+    },
+    {
+        "id": 16,
+        "brand": "Hoka One One",
+        "name": "Clifton",
+        "image": "https://www.pngall.com/wp-content/uploads/2/Sneakers-PNG-HD-Image.png",
+        "category": "Men",
+        "size": "10",
+        "label": "New in",
+        "price": "R2300"
+    },
+    {
+        "id": 17,
+        "brand": "On Running",
+        "name": "Cloud",
+        "image": "https://www.pngall.com/wp-content/uploads/2/Sneakers-PNG-HD-Image.png",
+        "category": "Women",
+        "size": "8",
+        "label": "Coming Soon",
+        "price": "R1600"
+    },
+    {
+        "id": 18,
+        "brand": "Diadora",
+        "name": "N9000",
+        "image": "https://www.pngall.com/wp-content/uploads/2/Sneakers-PNG-HD-Image.png",
+        "category": "Kids",
+        "size": "6",
+        "label": "Exclusive",
+        "price": "R1900"
+    }
+]

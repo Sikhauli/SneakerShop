@@ -1,0 +1,44 @@
+[
+    {
+        "name": "Black Sneakers",
+        "price": "$50",
+        "color": "Black",
+        "delivery_time": "1-2 business days",
+        "image": "https://www.pngall.com/wp-content/uploads/2/Black-Sneakers-Transparent.png"
+    },
+    {
+        "name": "Blue Sneakers",
+        "price": "$60",
+        "color": "Blue",
+        "delivery_time": "2-3 business days",
+        "image": "https://www.pngall.com/wp-content/uploads/2/Sneakers-PNG-Clipart.png"
+    },
+    {
+        "name": "White Sneakers",
+        "price": "$55",
+        "color": "White",
+        "delivery_time": "1-2 business days",
+        "image": "https://www.pngall.com/wp-content/uploads/2/Sneakers-PNG-Free-Download.png"
+    },
+    {
+        "name": "Red Sneakers",
+        "price": "$45",
+        "color": "Red",
+        "delivery_time": "3-4 business days",
+        "image": "https://www.pngall.com/wp-content/uploads/2/Sneakers-PNG-HD-Image.png"
+    },
+    {
+        "name": "White Sneakers",
+        "price": "$55",
+        "color": "White",
+        "delivery_time": "1-2 business days",
+        "image": "https://www.pngall.com/wp-content/uploads/2/Sneakers-PNG-Free-Download.png"
+    },
+    {
+        "name": "Red Sneakers",
+        "price": "$45",
+        "color": "Red",
+        "delivery_time": "3-4 business days",
+        "image": "https://www.pngall.com/wp-content/uploads/2/Sneakers-PNG-HD-Image.png"
+    }
+]
