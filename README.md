@@ -2,11 +2,12 @@
 
 Welcome to SneakerShop! This project showcases my skills and experiences as a web developer.
 
+
 ### Weblink: [Live Website]()
 
 ## Some Images:
 
-##client-images:
+## client-images:
 
 <img width="450px;" src="https://github.com/Sikhauli/SneakerShop/blob/main/frontend/src/assets/img/1.png?raw=true"/>
 <img width="450px;" src="https://github.com/Sikhauli/SneakerShop/blob/main/frontend/src/assets/img/2.png?raw=true"/>
@@ -14,7 +15,7 @@ Welcome to SneakerShop! This project showcases my skills and experiences as a we
 <img width="450px;" src="https://github.com/Sikhauli/SneakerShop/blob/main/frontend/src/assets/img/4.png?raw=true"/>
 <img width="450px;" src="https://github.com/Sikhauli/SneakerShop/blob/main/frontend/src/assets/img/5.png?raw=true"/>
 
-##Admin-images
+## Admin-images
 
 <img width="450px;" src="https://github.com/Sikhauli/SneakerShop/blob/main/frontend/src/assets/img/6.png?raw=true"/>
 <img width="450px;" src="https://github.com/Sikhauli/SneakerShop/blob/main/frontend/src/assets/img/7.png?raw=true"/>
