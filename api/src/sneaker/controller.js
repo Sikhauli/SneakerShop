@@ -62,20 +62,15 @@ const updateSneaker = async (req, res) => {
         if (req.files) req.body.images = newFilePaths(req.files);
 
         //find old pic to delete
-        const oldImages = coffinExists?.images;
-
-        // const updatedSneaker = await Sneaker.findOneAndUpdate({ _id: req.params.id }, req.body, { new: true });
-        // Coffin.findByIdAndUpdate(req.params.id, req.body, { new: true })
-        // res.send(updatedSneaker);
-        
-    Sneaker.findByIdAndUpdate(req.params.id, req.body, { new: true })
+    const oldImages = sneakerExists?.images;
+        Sneaker.findByIdAndUpdate(req.params.id, req.body, { new: true })
         .then((response) => {
             if (req.files) deleteFiles(oldImages);
 
             res.send(response);
         })
         .catch((error) => {
-            routeErrors(res, error, "Unable to update Coffin!");
+            routeErrors(res, error, "Unable to update Sneaker!");
         });
 };
 

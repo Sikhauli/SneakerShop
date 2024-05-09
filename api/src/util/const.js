@@ -9,10 +9,8 @@ const USERS = {
     USER: "user",
 };
 
-
 const FILE_STORAGE_PATH = {
-    // vehicleImages: "vehicles/images/",
-    sneakerImages: "sneaker/images/",
+    sneakerImages: "sneakers/images/",
     userAvatars: "users/avatars/",
 };
 
