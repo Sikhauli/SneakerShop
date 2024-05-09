@@ -9,8 +9,15 @@ const USERS = {
     USER: "user",
 };
 
+<<<<<<< HEAD
 const FILE_STORAGE_PATH = {
     sneakerImages: "sneakers/images/",
+=======
+
+const FILE_STORAGE_PATH = {
+    // vehicleImages: "vehicles/images/",
+    sneakerImages: "sneaker/images/",
+>>>>>>> c87c7d467163fa0c3aee553d0510d24317e6eddc
     userAvatars: "users/avatars/",
 };
 

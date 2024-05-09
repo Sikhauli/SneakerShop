@@ -1,0 +1,269 @@
+@import 'tailwindcss/base';
+@import 'tailwindcss/components';
+@import 'tailwindcss/utilities';
+
+:root {
+  font-family: Inter, system-ui, Avenir, Helvetica, Arial, sans-serif;
+  line-height: 1.5;
+  font-weight: 400;
+
+  color-scheme: light dark;
+  color: rgba(255, 255, 255, 0.87);
+  background-color: #242424;
+
+  font-synthesis: none;
+  text-rendering: optimizeLegibility;
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+}
+
+a {
+  font-weight: 500;
+  color: #646cff;
+  text-decoration: inherit;
+}
+a:hover {
+  color: #535bf2;
+}
+
+body {
+  margin: 0;
+  display: flex;
+  /* place-items: center; */
+  min-width: 320px;
+  min-height: 100vh;
+}
+
+h1 {
+  font-size: 3.2em;
+  line-height: 1.1;
+}
+
+button {
+  border-radius: 8px;
+  border: 1px solid transparent;
+  padding: 0.6em 1.2em;
+  font-size: 1em;
+  font-weight: 500;
+  font-family: inherit;
+  background-color: #1a1a1a;
+  cursor: pointer;
+  transition: border-color 0.25s;
+}
+button:hover {
+  border-color: #646cff;
+}
+button:focus,
+button:focus-visible {
+  outline: 4px auto -webkit-focus-ring-color;
+}
+
+@media (prefers-color-scheme: light) {
+  :root {
+    color: #213547;
+    background-color: #ffffff;
+  }
+  a:hover {
+    color: #747bff;
+  }
+  button {
+    background-color: #f9f9f9;
+  }
+}
+
+Button{
+    cursor: pointer;
+    position: relative;
+    border-radius: 2px;
+    overflow: hidden;
+    -webkit-border-radius: 2px;
+    -moz-border-radius: 2px;
+    -ms-border-radius: 2px;
+    -o-border-radius: 2px;
+}
+
+@keyframes hoverAnimation {
+  0% {
+    background-color: purple;
+    border: none;
+    color: white;
+  }
+
+  100% {
+    background-color: transparent;
+    border: 2px solid purple;
+    color: white;
+  }
+}
+
+.custom-checkbox:hover input[type="checkbox"] {
+  border: none;
+}
+
+.animatedText{
+font-family: 'Gill Sans', 'Gill Sans MT', Calibri, 'Trebuchet MS', sans-serif;
+font: bolder;
+font-stretch: condensed;
+font-synthesis: weight;
+
+}
+
+/* Navbar style */
+.navbar {
+  display: flex;
+  box-shadow: 0 0 2px 0 grey;
+  align-items: center;
+  font-size: 1em;
+
+  background-color: #3761af;
+  background-color: var(--theme-bg-color);
+
+  color: white;
+  color: var(--theme-color);
+
+}
+
+.item {
+  padding: 10px;
+  text-decoration: none;
+  color: white;
+  color: var(--theme-color);
+
+}
+
+.item.right {
+  margin: 0 0 0 auto;
+}
+
+.navbar .logo {
+  font-size: 1.2em;
+  align-items: center;
+  display: flex;
+}
+
+.logo img {
+  max-width: 40px;
+}
+
+.item.search {
+  transition: 0.2s linear;
+  display: flex;
+  justify-content: center;
+  flex-grow: 1;
+
+}
+
+.item.search .search-icon {
+  border-left: 1px solid grey;
+  margin: 2px;
+  padding-left: 10px;
+  cursor: pointer;
+  color: grey;
+}
+
+.item.search .search-icon:hover {
+
+  color: black;
+}
+
+.item.search input {
+  width: 100%;
+  padding: 6px;
+  outline: none;
+  border: 2px solid grey;
+  max-width: 100%;
+  border: 0;
+}
+
+.item .search-group {
+  display: flex;
+  width: 100%;
+  max-width: 700px;
+  border-radius: 20px;
+  border: 2px solid grey;
+  overflow: hidden;
+  background: white;
+
+  border-color: white;
+  color: var(--theme-color);
+
+}
+
+.item .search-group select {
+
+  border: 0;
+  margin: 2px;
+  border-right: 1px solid grey;
+  max-width: 5em;
+  outline: none;
+  color: grey;
+
+}
+
+.item .group {
+  display: flex;
+  align-items: center;
+  font-size: 0.9em;
+}
+
+
+.item .group .sub {
+  font-size: 0.8em;
+
+
+}
+
+.material-icons {
+  font-size: 1.8rem;
+}
+
+
+.menu-icon {
+  display: none;
+}
+
+
+
+.custom-transparent-input {
+  background-color: transparent !important;
+}
+
+
+@media (max-width: 639px) {
+  body {
+    position: relative;
+  }
+
+    body::after {
+    content: "We discourage using our webapp on smaller devices as we are still working on optimizing the layout for screens of this size.";
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    position: absolute;
+    text-align: center;
+    padding: 30px;
+    z-index: 1000;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    background-color: white;
+    color: #242424;
+  }
+}
+
+/* @media (max-width: 700px) {
+  .item.search input {
+    display: none;
+  }
+
+  .menu-icon {
+    display: block;
+  }
+
+  .detail,
+  .logo .text {
+    display: none;
+
+  }
+} */
