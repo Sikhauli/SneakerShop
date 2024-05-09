@@ -2,12 +2,6 @@
 
 Welcome to SneakerShop! This project showcases my skills and experiences as a web developer.
 
-<<<<<<< HEAD
-### Weblink: [Live Website]()
-## Some Images:
-
-=======
-
 ### Weblink: [Live Website]()
 
 ## Some Images:
@@ -29,8 +23,6 @@ Welcome to SneakerShop! This project showcases my skills and experiences as a we
 <img width="450px;" src="https://github.com/Sikhauli/SneakerShop/blob/main/frontend/src/assets/img/10.png?raw=true"/>
 <img width="450px;" src="https://github.com/Sikhauli/SneakerShop/blob/main/frontend/src/assets/img/11.png?raw=true"/>
 
-
->>>>>>> c87c7d467163fa0c3aee553d0510d24317e6eddc
 
 ## Table of Contents
 - [Introduction](#introduction)
