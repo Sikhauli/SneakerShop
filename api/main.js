@@ -49,7 +49,6 @@ app.use(
 app.use("/api/auth", authRoute);
 app.use("/api/sneaker", sneakerRoute);
 
-
 //this middleware should be after all other middlewares ALWAYS!!!
 app.use((error, req, res, next) => {
     if (error instanceof multer.MulterError) {

@@ -18,10 +18,4 @@ const uploadFiles = (path) => {
 };
 
 module.exports = uploadFiles;
-<<<<<<< HEAD
 
-
-
-
-=======
->>>>>>> c87c7d467163fa0c3aee553d0510d24317e6eddc
